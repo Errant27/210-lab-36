@@ -23,25 +23,25 @@ int main() {
         }
     reader.close();
     
-    int sel = main_menu();
+    int sel = main_menu();    // user selection from the main menu function
     string entry;
    
-    while (sel != CHOICES) {    // while loop to run the main menu oprions
+    while (sel != CHOICES) {    // while loop to run the main menu options
         switch (sel) {
             case 1:
-                cout << "Enter the string do you want to add: ";
+                cout << "Enter the string do you want to add: ";    // case 1 runs the insert member function
                 cin >> entry;
                 tree.insertNode(entry);
                 cout << "----------------------------" << endl;
                 break;
             case 2:
-                cout << "Enter the string do you want to delete: ";
+                cout << "Enter the string do you want to delete: ";    // case 2 runs the remove member function
                 cin >> entry;
                 tree.remove(entry);
                 cout << entry << " removed from the tree\n";
                 break;
             case 3:
-                cout << "Enter the string do you want to search: ";
+                cout << "Enter the string do you want to search: ";    // case 3 runs the search member function
                 cin >> entry;
                 if(tree.searchNode(entry)) {
                     cout << entry << " is in the tree\n";
@@ -53,7 +53,7 @@ int main() {
                 }
                 break;
             case 4:
-                cout << "Enter the string do you want to modify: ";
+                cout << "Enter the string do you want to modify: ";    // case 4 runs the search and insert functions to modify a node
                 cin >> entry;
                 if (tree.searchNode(entry)) {
                     cout << entry << " is in the tree\n";
@@ -70,16 +70,16 @@ int main() {
                 cout << "Invalid selection.\n";
                 break;
         }
-        sel = main_menu();
+        sel = main_menu();    // user enters another option, if the user enters 5 the loop terminates
     }
     
-    cout << "Thanks for using the Tree Manager" << endl;
+    cout << "Thanks for using the Tree Manager" << endl;    // exit message
     cout << "----------------------------" << endl;
 
     return 0;
 }
 
-int main_menu() {
+int main_menu() {    // main menu function definition
     cout << "MAIN MENU\n";
     cout << "[1] Insert node \n";
     cout << "[2] Delete node\n";
